@@ -118,7 +118,7 @@ void Heap<T,PComparator>::pop()
       if ((i * ary) + j >= stuff.size()) {
         break;
       }
-      if (stuff[(i * ary) + j - 1], comp(stuff[min])) {
+      if (comp(stuff[(i * ary) + j - 1], stuff[min])) {
         min = (i * ary) + j - 1;
       }
     }
