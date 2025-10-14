@@ -112,7 +112,7 @@ void Heap<T,PComparator>::pop()
   stuff[stuff.size() - 1] = temp;
   stuff.pop_back();
   int i = 1;
-  while (i < stuff.size() - 1) {
+  while (i < stuff.size()) {
     bool done = true;
     for (int j = 0; j < ary; j++) {
       if ((i * ary) + j >= stuff.size()) {
