@@ -64,7 +64,7 @@ private:
   std::map<int, T> stuff;
   int s;
   int ary;
-
+  PComparator comp;
 
 
 };
