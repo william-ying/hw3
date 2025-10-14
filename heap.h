@@ -64,7 +64,6 @@ private:
   /// Add whatever helper functions and data members you need below
   std::vector<T> stuff;
   int ary;
-  PComparator comp;
 
 
 };
@@ -119,7 +118,7 @@ void Heap<T,PComparator>::pop()
       if ((i * ary) + j >= stuff.size()) {
         break;
       }
-      if (comp(stuff[i - 1], stuff[(i * ary) + j - 1])) {
+      if (c(stuff[i - 1], stuff[(i * ary) + j - 1])) {
         temp = stuff[i - 1];
         stuff[i - 1] = stuff[(i * ary) + j - 1];
         stuff[(i * ary) + j - 1] = temp;
@@ -149,7 +148,6 @@ template <typename T, typename PComparator = std::less<T> >
 Heap<T, PComparator>::Heap(int m=2, PComparator c = PComparator()) {
   s = 0;
   ary = m;
-  comp = c;
 }
 
 /**
@@ -169,7 +167,7 @@ Heap<T, PComparator>::void push(const T& item) {
   stuff.push_back(item);
   T temp;
   for (int i = stuff.size(); i > 1; i /= ary) {
-    if (comp(stuff[i - 1], stuff[(i / ary) - 1])) {
+    if (c(stuff[i - 1], stuff[(i / ary) - 1])) {
       temp = stuff[i - 1];
       stuff[i - 1] = stuff[(i / ary) - 1];
       stuff[(i / ary) - 1] = temp;
