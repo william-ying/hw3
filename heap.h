@@ -167,11 +167,11 @@ template <typename T, typename PComparator>
 void Heap<T, PComparator>::push(const T& item) {
   stuff.push_back(item);
   T temp;
-  for (int i = stuff.size() - 1; i >= 1; i = (i / ary) - 1) {
-    if (comp(stuff[i - 1], stuff[(i / ary) - 1])) {
-      temp = stuff[i - 1];
-      stuff[i - 1] = stuff[(i / ary) - 1];
-      stuff[(i / ary) - 1] = temp;
+  for (int i = stuff.size() - 1; i >= 1; i = (i - 1) / ary) {
+    if (comp(stuff[i], stuff[(i - 1) / ary])) {
+      temp = stuff[i];
+      stuff[i] = stuff[(i - 1) / ary];
+      stuff[(i - 1) / ary] = temp;
     } else {
       break;
     }
