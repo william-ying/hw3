@@ -62,7 +62,6 @@ public:
 private:
   /// Add whatever helper functions and data members you need below
   std::vector<T> stuff;
-  int s;
   int ary;
   PComparator comp;
 
