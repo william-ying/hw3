@@ -146,7 +146,6 @@ void Heap<T,PComparator>::pop()
  */
 template <typename T, typename PComparator>
 Heap<T, PComparator>::Heap(int m, PComparator c) {
-  s = 0;
   ary = m;
   comp = c;
 }
