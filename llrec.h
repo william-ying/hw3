@@ -90,6 +90,7 @@ Node* llfilter(Node* head, Comp pred)
             return llfilter(temp, pred);
         } else {
             llfilter(head->next, pred);
+            std::cout << head->val << std::endl;
         }
     }
     return head;
