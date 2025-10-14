@@ -83,7 +83,7 @@ T const & Heap<T,PComparator>::top() const
     // ================================
     // throw the appropriate exception
     // ================================
-    throw std::underflow_error;
+    throw std::underflow_error("size 0");
 
   }
   // If we get here we know the heap has at least 1 item
@@ -104,7 +104,7 @@ void Heap<T,PComparator>::pop()
     // ================================
     // throw the appropriate exception
     // ================================
-    throw std::underflow_error;
+    throw std::underflow_error("size 0");
 
   }
   
