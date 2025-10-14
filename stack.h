@@ -40,7 +40,7 @@ void Stack<T>::push(const T& item) {
 template <typename T>
 void Stack<T>::pop() {
     if (empty()) {
-        throw std::underflow_error;
+        throw std::underflow_error();
     } else {
         std::vector<T>::pop_back();
     }
@@ -48,7 +48,7 @@ void Stack<T>::pop() {
 template <typename T>
 const T& Stack<T>::top() const {
     if (empty()) {
-        throw std::underflow_error;
+        throw std::underflow_error();
     } else {
         return vector<T>::operator[size() - 1];
     }
