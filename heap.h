@@ -111,27 +111,28 @@ void Heap<T,PComparator>::pop()
   stuff[0] = stuff[stuff.size() - 1];
   stuff[stuff.size() - 1] = temp;
   stuff.pop_back();
-  int i = 1;
-  while (i - 1 < stuff.size()) {
-    int min = i - 1;
-    for (int j = 0; j < ary; j++) {
+  int i = 0;
+  while (i < stuff.size()) {
+    int min = i;
+    for (int j = 1; j <= ary; j++) {
       if ((i * ary) + j >= stuff.size()) {
         break;
       }
-      if (!comp(stuff[(i * ary) + j - 1], stuff[min])) {
-        min = (i * ary) + j - 1;
+      if (comp(stuff[(i * ary) + j], stuff[min])) {
+        min = (i * ary) + j;
       }
     }
-    if (min == i - 1) {
+    if (min == i) {
       break;
     } else {
-      temp = stuff[i - 1];
-      stuff[i - 1] = stuff[min];
+      temp = stuff[i];
+      stuff[i] = stuff[min];
       stuff[min] = temp;
-      i = min + 1;
+      i = min;
     }
   }
-
+  
+  
 
 }
 
