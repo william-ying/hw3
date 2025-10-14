@@ -26,13 +26,15 @@ Heap::~Heap();
  * @param item item to heap
  */
 Heap::void push(const T& item) {
-  s++;
-  int counter = 1;
-  while (true) {
-    if (stuff.count(counter)) {
-      a;
+  stuff.push_back(item);
+  T temp;
+  for (int i = stuff.size(); i > 1; i /= ary) {
+    if (comp(stuff[i - 1], stuff[(i / ary) - 1])) {
+      temp = stuff[i - 1];
+      stuff[i - 1] = stuff[(i / ary) - 1];
+      stuff[(i / ary) - 1] = temp;
     } else {
-      stuff[counter] = item;
+      break;
     }
   }
 }
@@ -43,14 +45,45 @@ Heap::void push(const T& item) {
  * @return T const& top priority item
  * @throw std::underflow_error if the heap is empty
  */
-T const & Heap::top() const;
+T const & Heap::top() const {
+  if (empty()) {
+    throw std::underflow_error;
+  } else {
+    return stuff[0];
+  }
+}
 
 /**
  * @brief Remove the top priority item
  * 
  * @throw std::underflow_error if the heap is empty
  */
-void Heap::pop()
+void Heap::pop() {
+  T temp = stuff[0];
+  stuff[0] = stuff[stuff.size() - 1];
+  stuff[stuff.size() - 1] = temp;
+  stuff.pop_back();
+  int i = 1;
+  bool done = true;
+  while (i < stuff.size() - 1) {
+    for (int j = 0; j < ary; j++) {
+      if ((i * ary) + j >= stuff.size()) {
+        break;
+      }
+      if (comp(stuff[i - 1], stuff[(i * ary) + j - 1])) {
+        temp = stuff[i - 1];
+        stuff[i - 1] = stuff[(i * ary) + j - 1];
+        stuff[(i * ary) + j - 1] = temp;
+        i = (i * ary) + j;
+        done = false;
+        break;
+      }
+    }
+    if (done) {
+      break;
+    }
+  }
+}
 
 /// returns true if the heap is empty
 
@@ -59,7 +92,7 @@ void Heap::pop()
  * 
  */
 bool Heap::empty() const {
-  return (s == 0);
+  return (stuff.empty());
 }
 
   /**
@@ -67,5 +100,5 @@ bool Heap::empty() const {
  * 
  */
 size_t Heap::size() const {
-  return s;
+  return stuff.size();
 }
