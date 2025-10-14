@@ -50,7 +50,7 @@ const T& Stack<T>::top() const {
     if (empty()) {
         throw std::underflow_error();
     } else {
-        return std::vector<T>::operator[size() - 1];
+        return std::vector<T>::operator[](size() - 1);
     }
 }
 
