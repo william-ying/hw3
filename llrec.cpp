@@ -36,6 +36,8 @@
  *
  */
 void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot) {
+  smaller = nullptr;
+  larger = nullptr;
   if (head != nullptr) {
     Node *temp = head->next;
     head->next = nullptr;
