@@ -63,6 +63,7 @@ private:
   /// Add whatever helper functions and data members you need below
   std::map<int, T> stuff;
   int s;
+  int ary;
 
 
 
