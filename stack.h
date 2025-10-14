@@ -35,14 +35,14 @@ size_t Stack<T>::size() const {
 }
 template <typename T>
 void Stack<T>::push(const T& item) {
-    vector<T>::push_back(item);
+    std::vector<T>::push_back(item);
 }
 template <typename T>
 void Stack<T>::pop() {
     if (empty()) {
         throw std::underflow_error;
     } else {
-        vector<T>::pop_back();
+        std::vector<T>::pop_back();
     }
 }
 template <typename T>
