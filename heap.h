@@ -145,7 +145,7 @@ void Heap<T,PComparator>::pop()
  *          priority over the second.
  */
 template <typename T, typename PComparator = std::less<T> >
-Heap<T, PComparator>::Heap(int m=2, PComparator c) {
+Heap<T, PComparator>::Heap(int m, PComparator c) {
   s = 0;
   ary = m;
   comp = c;
