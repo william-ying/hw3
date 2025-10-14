@@ -1,27 +1,31 @@
 #include "stack.h"
-
-Stack::Stack() {
+template <typename T>
+Stack<T>::Stack() : std::vector<T>() {
 
 }
-
-Stack::~Stack();
-bool Stack::empty() const {
+template <typename T>
+Stack<T>::~Stack() : std::~vector<T>();
+bool Stack<T>::empty() const {
     return (Stack.size() == 0);
 }
-size_t Stack::size() const {
+template <typename T>
+size_t Stack<T>::size() const {
     return (vector<T>::size());
 }
-void Stack::push(const T& item) {
+template <typename T>
+void Stack<T>::push(const T& item) {
     vector<T>::push_back(item);
 }
-void Stack::pop() {
+template <typename T>
+void Stack<T>::pop() {
     if (empty()) {
         throw std::underflow_error;
     } else {
         vector<T>::pop_back();
     }
 }
-const T& Stack::top() const {
+template <typename T>
+const T& Stack<T>::top() const {
     if (empty()) {
         throw std::underflow_error;
     } else {
