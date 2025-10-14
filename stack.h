@@ -24,7 +24,7 @@ Stack<T>::Stack() : std::vector<T>() {
 
 }
 template <typename T>
-Stack<T>::~Stack() : std::~vector<T>();
+Stack<T>::~Stack() : ~std::vector<T>();
 bool Stack<T>::empty() const {
     return (Stack.size() == 0);
 }
