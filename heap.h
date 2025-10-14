@@ -127,7 +127,7 @@ void Heap<T,PComparator>::pop()
     } else {
       temp = stuff[i - 1];
       stuff[i - 1] = stuff[min];
-      stuff[(min] = temp;
+      stuff[min] = temp;
       i = min + 1;
     }
   }
