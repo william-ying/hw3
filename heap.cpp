@@ -8,20 +8,20 @@
    *          as an argument and returns a bool if the first argument has
    *          priority over the second.
    */
-  Heap(int m=2, PComparator c = PComparator());
+  Heap::Heap(int m=2, PComparator c = PComparator());
 
   /**
   * @brief Destroy the Heap object
   * 
   */
-  ~Heap();
+  Heap::~Heap();
 
   /**
    * @brief Push an item to the heap
    * 
    * @param item item to heap
    */
-  void push(const T& item);
+  Heap::void push(const T& item);
 
   /**
    * @brief Returns the top (priority) item
@@ -29,14 +29,14 @@
    * @return T const& top priority item
    * @throw std::underflow_error if the heap is empty
    */
-  T const & top() const;
+  T const & Heap::top() const;
 
   /**
    * @brief Remove the top priority item
    * 
    * @throw std::underflow_error if the heap is empty
    */
-  void pop();
+  void Heap::pop();
 
   /// returns true if the heap is empty
 
@@ -44,10 +44,10 @@
    * @brief Returns true if the heap is empty
    * 
    */
-  bool empty() const;
+  bool Heap::empty() const;
 
     /**
    * @brief Returns size of the heap
    * 
    */
-  size_t size() const;
+  size_t Heap::size() const;
