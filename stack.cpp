@@ -1,10 +1,10 @@
 #include "stack.h"
 
-Stack::Stack() {
+Stack<T>::Stack() {
 
 }
 
-Stack::~Stack();
+Stack<T>::~Stack();
 template <typename T>
 bool Stack<T>::empty() const {
     return (Stack.size() == 0);
