@@ -163,7 +163,7 @@ Heap<T, PComparator>::~Heap() {}
  * @param item item to heap
  */
 template <typename T, typename PComparator>
-Heap<T, PComparator>::void push(const T& item) {
+void Heap<T, PComparator>::push(const T& item) {
   stuff.push_back(item);
   T temp;
   for (int i = stuff.size(); i > 1; i /= ary) {
