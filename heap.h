@@ -144,7 +144,7 @@ void Heap<T,PComparator>::pop()
  *          as an argument and returns a bool if the first argument has
  *          priority over the second.
  */
-template <typename T, typename PComparator = std::less<T> >
+template <typename T, typename PComparator>
 Heap<T, PComparator>::Heap(int m, PComparator c) {
   s = 0;
   ary = m;
@@ -155,7 +155,7 @@ Heap<T, PComparator>::Heap(int m, PComparator c) {
 * @brief Destroy the Heap object
 * 
 */
-template <typename T, typename PComparator = std::less<T> >
+template <typename T, typename PComparator>
 Heap<T, PComparator>::~Heap() {}
 
 /**
@@ -163,7 +163,7 @@ Heap<T, PComparator>::~Heap() {}
  * 
  * @param item item to heap
  */
-template <typename T, typename PComparator = std::less<T> >
+template <typename T, typename PComparator>
 Heap<T, PComparator>::void push(const T& item) {
   stuff.push_back(item);
   T temp;
@@ -186,7 +186,7 @@ Heap<T, PComparator>::void push(const T& item) {
  * @brief Returns true if the heap is empty
  * 
  */
-template <typename T, typename PComparator = std::less<T> >
+template <typename T, typename PComparator>
 bool Heap<T, PComparator>::empty() const {
   return (stuff.empty());
 }
@@ -195,7 +195,7 @@ bool Heap<T, PComparator>::empty() const {
  * @brief Returns size of the heap
  * 
  */
-template <typename T, typename PComparator = std::less<T> >
+template <typename T, typename PComparator>
 size_t Heap<T, PComparator>::size() const {
   return stuff.size();
 }
